@@ -276,6 +276,7 @@ Butterworth Passa\-Alta
 - Capacitor real: 1.00 µF
 
 Pode\-se notar que há uma proximidade entre os componentes indutores, já com os capacitores os há uma discrepância entre os valores ideias e de componentes reais, sendo assim o componente que mais afeta os filtros.
+
 Usando esses valores de componentes o diagrama de Bode comparativo dos filtros é:
 
 ## Filto Woofer:
@@ -322,7 +323,8 @@ Os principais efeitos que essa diferença podem causar são:
 -  Transições menos suaves nos filtros utilizados; 
 -  Sobreposições ou cancelamentos de frequências no crossover; 
 -  Alteração suave nos tons; 
--  Passagem de frequências indesejadas e cancelamento de frequências desejadas perto da frequência de corte; 
+-  Passagem de frequências indesejadas e cancelamento de frequências desejadas perto da frequência de corte;
+  
 Em sistemas de áudio mais simples essas diferenças acabam sendo mais sutis e de pouco impacto, já em sistemas maiores, essas diferenças acabam sendo mais perceptíveis precisando gerar ajustes maiores e componentes de alta precisão.
 
 ## 
@@ -331,12 +333,15 @@ Em sistemas de áudio mais simples essas diferenças acabam sendo mais sutis e d
 A diferença é pouco audível, principalmente pois:
 -  O ouvido humano tem tolerância a algumas alterações de amplitude; 
 -  O alto\-falante acaba mascarando parte das imperfeições; 
--  O ruído do ambiente pode afetar mais as frequência do que os filtro; 
+-  O ruído do ambiente pode afetar mais as frequência do que os filtro;
+  
 Mesmo assim, em ambientes controlados, pode se notar esses deslocamentos e pequenos ruídos principalmente na transição de graves e agudos;
 
 # Conclusão
 A proposta do projeto foi comprida, desenvolver um algoritmo que calcula os valores de componentes ideias e seleciona dentro de uma lista o componente comercial real mais próximo para poder realizar um filtro Butterworth de 2ª ordem e apresentar o diagrama de Bode mostrando a diferença entre os componentes. Com essa comparações pode\-se fazer uma análise dessa diferença e seus efeitos práticos.
+
 O maior desafio do projeto é a limitação da lista de componentes reais, o que pode afetar mais ou menos projetos dependendo das frequências de corte e impadância da carga, o que reforça a análise desses componentes para ver seus reias impactos antes de fazer projetos práticos.
+
 O projeto demonstra dessa forma que mesmo que surjam pequenas váriações e ainda possam ser usados para aplicações mais simples ainda deve ser levado em conta a simulação, análise para projetos maiores com diversos componentes para que essas diferenças sejam menos perceptíveis ainda.
 
 ## 
