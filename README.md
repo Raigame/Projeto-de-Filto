@@ -15,6 +15,7 @@ O projeto envolve o desenvolvimento de filtros de 2ª ordem **Butterworth**, esc
 
 ## 
 1. Butterworth de 2ª ordem
+
 um filto Butterworth tem resposta plana na banda de passagem e sua frequência de corte é descrito por:
 
  $$ \omega_c =2\pi f_c $$ 
@@ -25,6 +26,7 @@ A função de transferência de um filto de Butterworth de 2ª ordem é descrito
 
 ## 
 2. Filto Passa\-Baixa (Woofer)
+
 Usando um indutor em série e capacitor em derivação com a carga, a função de transferência é descrito pela equação:
 
  $$ H_{\textrm{LP}} \left(S\right)=\frac{1}{\textrm{LC}{\;s}^2 +R_L C\;s+1} $$ 
@@ -41,6 +43,7 @@ Onde:
 
 ## 
 3. Filtro Pass\-Alta (Tweeter)
+
 Usando um capacitor em série e indutor em derivação com a carga, a função de transferência é descrito pela equação:
 
  $$ H_{\textrm{HP}} \left(S\right)=\frac{Z_{||} }{Z_{||} +Z_C } $$ 
@@ -65,6 +68,7 @@ Feito para projetar um crossover passivo para uma caixa de som de duas vias util
 
 ## 
 1. Entrada de dados do projeto
+
 As especificações da frequência de corte e de impedância de carga, junto com uma lista de indutores e capacitores comerciais já são inseridas para fazer as demais etapas
 
 ```matlab
@@ -79,6 +83,7 @@ capacitores = [1.0, 1.2, 1.5, 1.8, 2.2, 2.7, 3.3, 3.9, 4.7, 5.6, 6.8, 8.2, 10, 1
 ```
 ## 
 2. Cálculo dos compomentes Ideais e Reais
+
 O cálculo dos componentes ideais é feito atráves das equações e funções descritas, já para os componentes reais foi criado uma biblioteca com a função de calcular a o componente com menor erro para selecionar o melhor componente.
 
  $$ \textrm{erro}=|X_{\textrm{ideal}} -X_{\textrm{real}} | $$ 
@@ -186,6 +191,7 @@ end
 ```
 ## 
 3. Projeto das funções de transferência
+
 O algoritmo projeta as funções de transferência para os componentes ideias e dos reais. O ideal usa os valores encontrado pelas equações já o real utiliza dos valores dados pela função que encontra o melhor componente.
 
 ```matlab
@@ -240,6 +246,7 @@ HP2R = Z1/(Zc+Z1);      %Highpass Real
 ```
 ## 
 4. Geração dos gráficos de Bode
+
 Utilizando das funções de transferência tanto ideiais quanto reais é o algoritmo executa:
 -  Cálculo da magnitude e fase nas funções de transferência; 
 -  Gráfica ambas respostas no mesmo gráfico, permitindo comparação de: 
@@ -299,15 +306,18 @@ Os filtros Butterworth com componentes ideias seguem o modelo teórico, mantendo
 O principal fator da análise é a diferença entre os componentes ideais e reais e seus efeitos
 
 ## 
-1.Diferença de Valores
+1. Diferença de Valores
+
 Os valores calculados para L e C ideais são diferentes dos valores de componentes comerciais reais, em relação aos indutores as diferenças foram sutis no paixa baixa sendo de aproximadamente 10,5% e no passa alta de 1,5%, a grande diferença se percebe nos capacitores indo 98% a 99% de erro, sendo o que mais afetava fatores como amortecimento e frequência do filtro.
 
 ## 
 2. Deslocamento da Frequência de corte
+
 Ao utilizar os valores comerciais reais, percebe\-se um deslocamento na frequência de corte,sendo visível nos gráficos de Bode, sendo mais perceptível no filtro de Tweeter onde ocorre um grande adiantamente em relação o filtro com componentes ideais.
 
 ## 
 3. Efeitos teóricos e práticos
+
 Os principais efeitos que essa diferença podem causar são:
 -  Transições menos suaves nos filtros utilizados; 
 -  Sobreposições ou cancelamentos de frequências no crossover; 
@@ -317,6 +327,7 @@ Em sistemas de áudio mais simples essas diferenças acabam sendo mais sutis e d
 
 ## 
 4. Percepção dos Efeitos
+
 A diferença é pouco audível, principalmente pois:
 -  O ouvido humano tem tolerância a algumas alterações de amplitude; 
 -  O alto\-falante acaba mascarando parte das imperfeições; 
