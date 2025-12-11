@@ -264,16 +264,16 @@ Utilizando das funções de transferência tanto ideiais quanto reais é o algor
 Para a análise de resultados os dados utilizados foram de 1.9 kHz para frequência de corte, e de 8 $\Omega$ para impedância de carga. Para o cálculo dos componentes o algoritmo retorna:
 
 Butterworth Passa\-Baixa
-Indutor ideal 1.34 mH
-Indutor real: 1.20 mH
-Capacitor ideal 0.01 µF
-Capacitor real: 1.00 µF
+- Indutor ideal 1.34 mH
+- Indutor real: 1.20 mH
+- Capacitor ideal 0.01 µF
+- Capacitor real: 1.00 µF
 
 Butterworth Passa\-Alta
-Indutor ideal 0.67 mH
-Indutor real: 0.68 mH
-Capacitor ideal 0.02 µF
-Capacitor real: 1.00 µF
+- Indutor ideal 0.67 mH
+- Indutor real: 0.68 mH
+- Capacitor ideal 0.02 µF
+- Capacitor real: 1.00 µF
 
 Pode\-se notar que há uma proximidade entre os componentes indutores, já com os capacitores os há uma discrepância entre os valores ideias e de componentes reais, sendo assim o componente que mais afeta os filtros.
 Usando esses valores de componentes o diagrama de Bode comparativo dos filtros é:
